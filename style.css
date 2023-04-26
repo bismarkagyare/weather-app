@@ -11,12 +11,14 @@
   --secondary-bg: #eaecef;
   --text-color-1: #202b3b;
   --text-color-2: #cbcfd3;
+  --letter-spacing: 0.2rem;
 }
 
 body {
   width: 100%;
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
+  color: var(--text-color-1);
 }
 
 .container {
@@ -72,6 +74,10 @@ body {
   margin-top: 1.2rem;
 }
 
+.weather-image {
+  margin-right: 1rem;
+}
+
 .weather-image img {
   width: 150px;
   height: auto;
@@ -92,10 +98,16 @@ body {
   color: #48484a
 }
 
+.city-info h2,
+.air-container h3 {
+  color: #48484a;
+}
+
 .weather-container h1 {
   font-size: 2.9rem;
   font-weight: 700;
   color: var(--text-color-1);
+  letter-spacing: var(--letter-spacing);
 }
 
 .this-week-forecast,
@@ -104,6 +116,14 @@ body {
   margin-bottom: 1.2rem;
   padding: 1rem;
   border-radius: 10px;
+}
+
+.this-week-title, 
+.air-condition-title {
+  text-align: center;
+  letter-spacing: var(--letter-spacing);
+  font-weight: 900;
+  padding-bottom: 0.5rem;
 }
 
 .weekdays-weather {
@@ -117,6 +137,13 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 0 auto;
+  display: block;
+}
+
+.weekdays-weather h3 {
+  color: #48484a;
+  text-align: center;
 }
 
 .weekdays-weather p {
@@ -128,6 +155,17 @@ body {
   justify-content: space-around;
 }
 
+.air-container img {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+}
+
+.air-container h3 {
+  text-align: center;
+}
+
 .air-container p {
   text-transform: capitalize;
+  text-align: center;
 }
