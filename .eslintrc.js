@@ -14,6 +14,7 @@ module.exports = {
     'prettier/prettier': 'error',
     'no-console': 'off',
     'arrow-body-style': 'off',
+    'no-unused-vars': 'off',
     'prefer-arrow-callback': 'off',
   },
 };
