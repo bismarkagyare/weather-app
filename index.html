@@ -4,9 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>Weather App</title>
   </head>
   <body>
+    <div class="container">
+      <div class="search-container">
+        <input type="text" name="search" id="search" class="search" placeholder="search for cities">
+        <button type="submit" class="submit">search</button>
+      </div>
+    </div>
+
+    <div class="weather-container">
+      <div class="city-info">
+        <h1 class="city-name">Manchester</h1>
+        <p class="chance-of-rain">Chance of rain: 0%</p>
+        <h2 class="degree">32°C</h2>
+      </div>
+      <div class="weather-image">
+        <img src="" alt="">
+      </div>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>
