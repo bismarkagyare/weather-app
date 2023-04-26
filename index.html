@@ -10,22 +10,99 @@
   <body>
     <div class="container">
       <div class="search-container">
-        <input type="text" name="search" id="search" class="search" placeholder="search for cities">
+        <input type="text" name="search" id="search" class="search" placeholder="Search a city">
         <button type="submit" class="submit">search</button>
       </div>
+
+      <div class="weather-container">
+        <div class="city-info">
+          <h1 class="city-name">Manchester</h1>
+          <p class="chance-of-rain">Chance of rain: 0%</p>
+          <h2 class="degree">32°C</h2>
+        </div>
+        <div class="weather-image">
+          <img src="./images/clear.png" alt="weather-image">
+        </div>
+      </div>
+  
+      <div class="this-week-forecast">
+        <h2 class="this-week-title">Forecast This Week</h2>
+        <div class="weekdays-weather">
+          <div class="monday">
+            <p>monday</p>
+            <img src="./images/clouds.png" alt="monday">
+            <h3>31°C</h3>
+          </div>
+          <div class="tuesday">
+            <p>tuesday</p>
+            <img src="./images/rain.png" alt="tuesday">
+            <h3>32°C</h3>
+          </div>
+          <div class="wednesday">
+            <p>wednesday</p>
+            <img src="./images/drizzle.png" alt="wednesday">
+            <h3>33°C</h3>
+          </div>
+          <div class="thursday">
+            <p>thursday</p>
+            <img src="./images/mist.png" alt="thursday">
+            <h3>34°C</h3>
+          </div>
+          <div class="friday">
+            <p>friday</p>
+            <img src="./images/clear.png" alt="friday">
+            <h3>31°C</h3>
+          </div>
+          <div class="saturday">
+            <p>saturday</p>
+            <img src="./images/drizzle.png" alt="saturday">
+            <h3>34°C</h3>
+          </div>
+          <div class="sunday">
+            <p>sunday</p>
+            <img src="./images/snow.png" alt="sunday">
+            <h3>37°C</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="air-conditions">
+        <h2 class="air-condition-title">air conditions</h2>
+        <div class="ar-container">
+          <div class="real-feel">
+            <div class="top">
+              <img src="./images/real-feel.svg" alt="real-feel">
+              <p>real-feel</p>
+            </div>
+            <h3>37°C</h3>
+          </div>
+          <div class="chance-of-rain">
+            <div class="top">
+              <img src="./images/chance.svg" alt="chance-of-rain">
+              <p>chance of rain</p>
+            </div>
+            <h3>0%</h3>
+          </div>
+          <div class="wind">
+            <div class="top">
+              <img src="./images/wind.svg" alt="wind">
+              <p>wind</p>
+            </div>
+            <h3>0.2km/h</h3>
+          </div>
+          <div class="uv-index">
+            <div class="top">
+              <img src="./images/uv-index.svg" alt="uv-index">
+              <p>UV Index</p>
+            </div>
+            <h3>3</h3>
+          </div>
+        </div>
+      </div>
+  
     </div>
 
-    <div class="weather-container">
-      <div class="city-info">
-        <h1 class="city-name">Manchester</h1>
-        <p class="chance-of-rain">Chance of rain: 0%</p>
-        <h2 class="degree">32°C</h2>
-      </div>
-      <div class="weather-image">
-        <img src="" alt="">
-      </div>
-    </div>
-
+    
     <script src="main.js"></script>
   </body>
 </html>
