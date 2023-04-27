@@ -169,3 +169,44 @@ body {
   text-transform: capitalize;
   text-align: center;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 480px) {
+  .weather-container h1 {
+    font-size: 1.3rem;
+  }
+
+  .weather-image img {
+    width: 70px;
+  }
+
+  .weekdays-weather {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .weekdays-weather img {
+    width: 40px;
+  }
+
+  .weekdays-weather h3 {
+    font-size: 1rem;
+  }
+
+  .monday,
+  .tuesday,
+  .wednesday {
+    margin-bottom: 1rem;
+  }
+
+  .air-container img {
+    width: 30px;
+  }
+
+  .air-container h3 {
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+
+}
