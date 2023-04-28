@@ -1,10 +1,20 @@
-async function checkWeather() {
-  const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric';
-  const apiKey = '64517a1e83aa07c580b750e305e6772f';
+import checkWeather from './modules/api';
 
-  const response = await fetch(`${apiUrl}&appid=${apiKey}`);
-  const data = await response.json();
-  console.log(data);
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.querySelector('.search-container input');
+  const searchBtn = document.querySelector('.submit');
+  checkWeather('Manchester');
 
-checkWeather();
+  const search = () => {
+    checkWeather(searchInput.value);
+    searchInput.value = '';
+  };
+
+  searchBtn.addEventListener('click', search);
+
+  searchInput.addEventListener('keydown', (event) => {
+    if (event.keyCode === 13) {
+      search();
+    }
+  });
+});
