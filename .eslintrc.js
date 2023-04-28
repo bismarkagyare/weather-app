@@ -15,6 +15,7 @@ module.exports = {
     'no-console': 'off',
     'arrow-body-style': 'off',
     'no-unused-vars': 'off',
+    'no-alert': 'off',
     'prefer-arrow-callback': 'off',
   },
 };
