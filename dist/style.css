@@ -95,12 +95,17 @@ body {
 
 .city-info .chance-of-rain {
   padding-bottom: 1rem;
+  margin-left: 0.2rem;
   color: #48484a
 }
 
 .city-info h2,
 .air-container h3 {
   color: #48484a;
+}
+
+.city-info h2 {
+  margin-left: 0.2rem;
 }
 
 .weather-container h1 {
