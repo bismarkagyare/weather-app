@@ -16,6 +16,7 @@ module.exports = {
     'arrow-body-style': 'off',
     'no-unused-vars': 'off',
     'no-alert': 'off',
+    enforceForRenamedProperties: false,
     'prefer-arrow-callback': 'off',
   },
 };
