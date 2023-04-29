@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   checkWeather('Manchester');
 
   const search = () => {
+    if (searchInput.value === '') return;
     checkWeather(searchInput.value);
     searchInput.value = '';
   };
