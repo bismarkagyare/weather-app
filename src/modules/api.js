@@ -8,6 +8,8 @@ import {
   updateHumidity,
 } from './dom';
 
+import { updateDateTime } from './date-time';
+
 const weatherImageMap = {
   Clear: 'sunny-w.svg',
   Clouds: 'cloudy.svg',
@@ -26,13 +28,15 @@ async function checkWeather(city) {
     const response = await fetch(`${apiUrl}&appid=${apiKey}`);
     if (!response.ok) throw new Error(`City ${city} not found`);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
 
     updateCityName(data.name);
     updateDegree(data.main.temp);
     updateFeelsLike(data.main.feels_like);
     updateWindSpeed(data.wind.speed);
     updateHumidity(data.main.humidity);
+
+    updateDateTime(city);
 
     const weatherCondition = data.weather[0].main;
     const weatherImageFileName = weatherImageMap[weatherCondition];
