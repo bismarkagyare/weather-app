@@ -3,7 +3,6 @@ import {
   updateDegree,
   updateWeatherImage,
   updateFeelsLike,
-  updateChanceOfRain,
   updateWindSpeed,
   updateHumidity,
 } from './dom';
