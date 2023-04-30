@@ -64,11 +64,12 @@ async function updateDateTime(city) {
     const year = dateTime.getFullYear();
     const hours = dateTime.getHours();
     const minutes = dateTime.getMinutes();
-    dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
+    const seconds = dateTime.getSeconds();
+    dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}:${seconds}`;
     setInterval(updateSeconds, 1000);
   } catch (error) {
     alert(error);
   }
 }
 
-export { getCurrentDateTime, updateDateTime };
+export { updateDateTime };
