@@ -23,18 +23,25 @@ function getCurrentDateTime() {
   const year = now.getFullYear();
   const hours = now.getHours();
   const minutes = now.getMinutes();
-  return `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
+  dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
+  setInterval(getSeconds, 1000);
+}
+
+// function updateSeconds() {
+//   const now = new Date();
+//   const seconds = now.getSeconds();
+//   dateTimeElement.textContent = `${getCurrentDateTime()}: ${seconds < 10 ? '0' : ''}${seconds}`;
+// }
+
+function getSeconds() {
+  const now = new Date();
+  const seconds = now.getSeconds();
+  return `${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
 async function updateDateTime(city) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
   const apiKey = '64517a1e83aa07c580b750e305e6772f';
-
-  function updateSeconds() {
-    const now = new Date();
-    const seconds = now.getSeconds();
-    dateTimeElement.textContent = `${getCurrentDateTime()}: ${seconds < 10 ? '0' : ''}${seconds}`;
-  }
 
   try {
     const response = await fetch(`${apiUrl}&appid=${apiKey}`);
@@ -64,12 +71,11 @@ async function updateDateTime(city) {
     const year = dateTime.getFullYear();
     const hours = dateTime.getHours();
     const minutes = dateTime.getMinutes();
-    const seconds = dateTime.getSeconds();
-    dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}:${seconds}`;
-    setInterval(updateSeconds, 1000);
+    dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
+    setInterval(getSeconds, 1000);
   } catch (error) {
     alert(error);
   }
 }
 
-export { updateDateTime };
+export { getCurrentDateTime, updateDateTime };
