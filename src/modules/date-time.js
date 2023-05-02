@@ -23,15 +23,15 @@ function getCurrentDateTime() {
   const year = now.getFullYear();
   const hours = now.getHours();
   const minutes = now.getMinutes();
-  dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
-  setInterval(getSeconds, 1000);
+  const seconds = now.getSeconds();
+  dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}: ${seconds}`;
+  setInterval(() => {
+    const seconds = getSeconds();
+    dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}:${seconds}`;
+  }, 1000);
 }
 
-// function updateSeconds() {
-//   const now = new Date();
-//   const seconds = now.getSeconds();
-//   dateTimeElement.textContent = `${getCurrentDateTime()}: ${seconds < 10 ? '0' : ''}${seconds}`;
-// }
+let intervalId;
 
 function getSeconds() {
   const now = new Date();
@@ -47,9 +47,11 @@ async function updateDateTime(city) {
     const response = await fetch(`${apiUrl}&appid=${apiKey}`);
     if (!response.ok) throw new Error(`City ${city} not found`);
     const data = await response.json();
-    const timezone = data.timezone;
-    const now = new Date().getTime() + timezone * 1000;
-    const dateTime = new Date(now);
+    const utcTime = new Date().getTime() + (data.timezone + new Date().getTimezoneOffset() * 60) * 1000;
+    const dateTime = new Date(utcTime);
+    // const timezone = data.timezone;
+    // const now = new Date().getTime() + timezone * 1000;
+    // const dateTime = new Date(now);
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const day = days[dateTime.getDay()];
     const date = dateTime.getDate();
@@ -71,8 +73,17 @@ async function updateDateTime(city) {
     const year = dateTime.getFullYear();
     const hours = dateTime.getHours();
     const minutes = dateTime.getMinutes();
-    dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
-    setInterval(getSeconds, 1000);
+    const seconds = getSeconds(dateTime); // get the current seconds
+    dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}:${
+      seconds < 10 ? '0' : ''
+    }${seconds}`;
+    clearInterval(intervalId);
+    intervalId = setInterval(() => {
+      const seconds = getSeconds(dateTime);
+      dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}:${
+        seconds < 10 ? '0' : ''
+      }${seconds}`;
+    }, 1000);
   } catch (error) {
     alert(error);
   }
