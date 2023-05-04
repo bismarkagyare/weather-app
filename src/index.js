@@ -1,4 +1,5 @@
 import checkWeather from './modules/api';
+import { getDailyTemperatures } from './modules/daily';
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.querySelector('.search-container input');
@@ -19,3 +20,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+getDailyTemperatures('london');
