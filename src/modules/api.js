@@ -27,7 +27,6 @@ async function checkWeather(city) {
     const response = await fetch(`${apiUrl}&appid=${apiKey}`);
     if (!response.ok) throw new Error(`City ${city} not found`);
     const data = await response.json();
-    // console.log(data);
 
     updateCityName(data.name);
     updateDegree(data.main.temp);
