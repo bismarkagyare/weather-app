@@ -9,6 +9,8 @@ import {
 
 import { updateDateTime } from './date-time';
 
+import { getDailyTemperatures } from './daily';
+
 const weatherImageMap = {
   Clear: 'sunny-w.svg',
   Clouds: 'cloudy.svg',
@@ -35,6 +37,7 @@ async function checkWeather(city) {
     updateHumidity(data.main.humidity);
 
     updateDateTime(city);
+    getDailyTemperatures(city);
 
     const weatherCondition = data.weather[0].main;
     const weatherImageFileName = weatherImageMap[weatherCondition];
