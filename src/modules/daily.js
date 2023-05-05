@@ -5,7 +5,17 @@ async function getDailyTemperatures(city) {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
+    const dailyData = data.list.filter((item) => item.dt_txt.includes('12:00:00'));
+    const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    dailyData.forEach((day, index) => {
+      const temperature = Math.round(day.main.temp);
+      const pop = day.pop;
+      const weekday = weekdays[index];
+      const temperatureElement = document.querySelector(`.${weekday} h3`);
+      const chanceOfRain = document.querySelector('.chance-of-rain h3');
+      temperatureElement.textContent = `${temperature}°C`;
+      chanceOfRain.textContent = `${pop}%`;
+    });
   } catch (error) {
     console.error(error);
   }
