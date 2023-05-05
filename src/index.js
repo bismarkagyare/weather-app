@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.querySelector('.search-container input');
   const searchBtn = document.querySelector('.submit');
   checkWeather('Manchester');
+  getDailyTemperatures('London');
 
   const search = () => {
     if (searchInput.value === '') return;
     checkWeather(searchInput.value);
+    getDailyTemperatures(searchInput.value);
     searchInput.value = '';
   };
 
@@ -20,5 +22,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-getDailyTemperatures('london');
