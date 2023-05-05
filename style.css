@@ -133,7 +133,7 @@ body {
 
 .weekdays-weather {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .weekdays-weather img {
