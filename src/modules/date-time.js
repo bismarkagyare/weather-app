@@ -34,9 +34,9 @@ async function updateDateTime(city) {
     let hours = dateTime.getHours();
     let minutes = dateTime.getMinutes();
     let seconds = dateTime.getSeconds(); // get the current seconds
-    dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes < 10 ? '0' : ''}${minutes}:${
-      seconds < 10 ? '0' : ''
-    }${seconds}`;
+    dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours < 10 ? '0' : ''}${hours}:${
+      minutes < 10 ? '0' : ''
+    }${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     clearInterval(timerId);
     timerId = setInterval(() => {
       seconds++;
@@ -52,9 +52,9 @@ async function updateDateTime(city) {
           }
         }
       }
-      dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours}:${minutes < 10 ? '0' : ''}${minutes}:${
-        seconds < 10 ? '0' : ''
-      }${seconds}`;
+      dateTimeElement.textContent = `${day}, ${date} ${month} ${year}, ${hours < 10 ? '0' : ''}${hours}:${
+        minutes < 10 ? '0' : ''
+      }${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     }, 1000);
   } catch (error) {
     alert(error);
