@@ -19,6 +19,7 @@ const weatherImageMap = {
   Drizzle: 'drizzle.png',
   Snow: 'snow.svg',
   Haze: 'haze.svg',
+  Thunderstorms: 'thunderstorm.svg',
 };
 
 async function checkWeather(city) {
