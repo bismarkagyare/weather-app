@@ -2,6 +2,8 @@
 
 The purpose of this weather app is to provide users with current and forecasted weather information for a given location. Users can search for a city and view the current temperature, weather condition, and wind speed, as well as a five-day forecast with temperature and chance of rain.
 
+You can view live [here](https://bismarkagyare.github.io/weather-app/):
+
 ## Technologies Used
 
 - HTML
